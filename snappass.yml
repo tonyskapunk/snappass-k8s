@@ -1,0 +1,14 @@
+---
+- name: Snappass
+  hosts: all
+  vars:
+    ansible_bender:
+      base_image: python:3.8-slim-buster
+      target_image:
+        name: snappass
+        cmd: snappass
+  tasks:
+  - name: Install snappass
+    pip:
+      name: snappass
+...

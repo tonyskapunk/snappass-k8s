@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: snappass
+  labels:
+    app: snappass
+spec:
+  containers:
+  - name: snappass
+    image: quay.io/tonyskapunk/snappass:latest
+    env:
+    - name: REDIS_URL
+      value: redis://redis:6379
+    - name: NO_SSL
+      value: ok
+    ports:
+      - containerPort: 5000
+...
